@@ -2,7 +2,7 @@
 
 This repository contains Terraform modules and Terragrunt configurations for personal AWS infrastructure management.
 
-## Directory Structure
+## Directory Structure (Example)
 
 ```
 .
@@ -59,7 +59,7 @@ Format Terraform and Terragrunt files:
 terraform fmt -recursive modules/
 
 # Format all Terragrunt files (from project root)
-terragrunt hcl format -a
+terragrunt hcl format --all
 ```
 
 ## Lint
@@ -68,27 +68,19 @@ Validate configuration syntax and best practices:
 
 ```bash
 # Validate Terragrunt configurations and Terraform modules
-cd terragrunt/vpc && terragrunt validate || cd -
-cd terragrunt/ec2 && terragrunt validate || cd -
+cd terragrunt/security/ap-northeast-1 && terragrunt validate && cd - || cd -
+# terragrunt validate --all
 
 # Run tflint for additional checks (if available)
-tflint --chdir=modules/vpc/ --disable-rule=terraform_required_version --disable-rule=terraform_required_providers
-tflint --chdir=modules/ec2/ --disable-rule=terraform_required_version --disable-rule=terraform_required_providers
+tflint --chdir=modules/security/ --disable-rule=terraform_required_version --disable-rule=terraform_required_providers
 ```
 
 ## Deploy
 
-### Deploy VPC
+### Deploy Security Configuration
 
 ```bash
-cd terragrunt/vpc
-terragrunt apply
-```
-
-### Deploy EC2 (requires VPC)
-
-```bash
-cd terragrunt/ec2
+cd terragrunt/security/ap-northeast-1
 terragrunt apply
 ```
 
@@ -96,7 +88,7 @@ terragrunt apply
 
 ```bash
 cd terragrunt
-terragrunt run-all apply
+terragrunt apply --all
 ```
 
 ### Destroy Resources
@@ -104,10 +96,10 @@ terragrunt run-all apply
 ```bash
 # Destroy all resources
 cd terragrunt
-terragrunt run-all destroy
+terragrunt destroy --all
 
 # Destroy specific resource
-cd terragrunt/ec2
+cd terragrunt/security/ap-northeast-1
 terragrunt destroy
 ```
 

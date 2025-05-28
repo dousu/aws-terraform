@@ -2,8 +2,8 @@ project_name: "dousu-aws-terraform"
 organization: "personal"
 
 # AWS Configuration
-aws_region: "us-west-2"
-availability_zones: ["us-west-2a", "us-west-2b"]
+aws_region: "ap-northeast-1"
+availability_zones: ["ap-northeast-1a", "ap-northeast-1c"]
 
 # Default tags applied to all resources
 default_tags:
