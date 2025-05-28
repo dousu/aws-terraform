@@ -79,5 +79,9 @@ Single configuration file approach:
 ## Code Style Rules
 
 - ファイルの最後は改行で終了する
-- 日本語を書く場合は句読点に`,`と`.`を使用すること
+- 日本語を書く場合は句点に`、`ではなく`，`，読点に`。`ではなく`．`を使用すること
 - READMEにはformat, lint, deployの項目を用意すること
+
+## Terraform Best Practices
+
+- terraformでAWSのIAMポリシーを記述する場合はなるべくデータソースのaws_iam_policy_documentで定義すること
