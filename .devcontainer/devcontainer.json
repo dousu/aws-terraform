@@ -28,7 +28,7 @@
       ],
       "settings": {
         "terraform.languageServer.enable": true,
-        "terraform.validation.enableEnhancedValidation": true,
+        "terraform.validation.enableEnhancedValidation": false,
         "terraform.format.enable": true,
         "files.associations": {
           "*.tf": "terraform",

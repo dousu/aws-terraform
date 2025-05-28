@@ -1,0 +1,4 @@
+# Ignore Terraform validation errors for missing variables
+# These variables are provided via common_variables.tf from terragrunt
+var.project_name
+var.environment
