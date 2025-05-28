@@ -1,0 +1,43 @@
+{
+  "name": "AWS Terraform Development",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "latest",
+      "tflint": "latest",
+      "terragrunt": "latest"
+    },
+    "ghcr.io/devcontainers/features/aws-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "latest",
+      "installYarnUsingApt": false
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "terraform.languageServer.enable": true,
+        "terraform.validation.enableEnhancedValidation": true,
+        "terraform.format.enable": true,
+        "files.associations": {
+          "*.tf": "terraform",
+          "*.tfvars": "terraform"
+        }
+      }
+    }
+  },
+  "postCreateCommand": "terraform version && terragrunt --version",
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspaces/aws-terraform"
+}

@@ -1,0 +1,27 @@
+project_name: "dousu-aws-terraform"
+organization: "personal"
+
+# AWS Configuration
+aws_region: "us-west-2"
+availability_zones: ["us-west-2a", "us-west-2b"]
+
+# Default tags applied to all resources
+default_tags:
+  Project: "aws-terraform"
+  ManagedBy: "Terragrunt"
+  Environment: "personal"
+  
+# Networking Configuration
+vpc_cidr: "10.0.0.0/16"
+public_subnet_cidrs: ["10.0.1.0/24", "10.0.2.0/24"]
+private_subnet_cidrs: ["10.0.11.0/24", "10.0.12.0/24"]
+
+# Compute Configuration
+instance_type: "t3.micro"
+min_size: 1
+max_size: 2
+desired_capacity: 1
+
+# Database Configuration
+db_instance_class: "db.t3.micro"
+db_allocated_storage: 20
